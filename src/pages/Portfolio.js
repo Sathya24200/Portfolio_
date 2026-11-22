@@ -177,6 +177,25 @@ const Portfolio = () => {
         }
     ];
 
+    const iotProjects = [
+        {
+            title: 'IoT-Based Automated Gas Leak Detection System',
+            description: 'Engineered a safety unit delivering instant SMS notifications via GSM and activating exhaust fan ventilation upon detection of hazardous gas leaks — ensuring real-time automated emergency response.',
+            technologies: ['Arduino Uno', 'MQ Sensor', 'GSM Module', 'Embedded C'],
+            link: 'https://lnkd.in/p/dEtTzE6v',
+            linkLabel: 'View Project & Demo',
+            category: 'IoT & Embedded Systems'
+        },
+        {
+            title: 'EMG-Controlled Prosthetic Arm Prototype',
+            description: 'Developed a prototype prosthetic hand actuated by EMG muscle signals using PWM control logic for multi-servo finger articulation — bridging bio-signal processing with physical assistive hardware.',
+            technologies: ['Arduino Uno', 'EMG Muscle Sensor', 'Servo Motors', 'Embedded C', 'PWM Control'],
+            link: 'https://lnkd.in/p/dc73WjEd',
+            linkLabel: 'View Project & Demo',
+            category: 'IoT & Biomedical Engineering'
+        }
+    ];
+
     const experiences = [
         {
             title: 'Data Science Intern',
@@ -227,6 +246,7 @@ const Portfolio = () => {
                         <div className="hidden md:flex items-center gap-7">
                             <button onClick={() => scrollToSection('about')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">About</button>
                             <button onClick={() => scrollToSection('projects')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Projects</button>
+                            <button onClick={() => scrollToSection('iot-projects')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">IoT Projects</button>
                             <button onClick={() => scrollToSection('experience')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Experience & IoT</button>
                             <button onClick={() => navigate('/details')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Skills & Details</button>
                             <button onClick={() => navigate('/certificates')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Certifications</button>
@@ -249,6 +269,7 @@ const Portfolio = () => {
                             <div className="flex flex-col py-4 px-6 space-y-4">
                                 <button onClick={() => scrollToSection('about')} className="text-left text-black hover:text-gray-600 transition-colors py-2">About</button>
                                 <button onClick={() => scrollToSection('projects')} className="text-left text-black hover:text-gray-600 transition-colors py-2">Projects</button>
+                                <button onClick={() => scrollToSection('iot-projects')} className="text-left text-black hover:text-gray-600 transition-colors py-2">IoT Projects</button>
                                 <button onClick={() => scrollToSection('experience')} className="text-left text-black hover:text-gray-600 transition-colors py-2">Experience & IoT</button>
                                 <button onClick={() => { navigate('/details'); setMobileMenuOpen(false); }} className="text-left text-black hover:text-gray-600 transition-colors py-2">Skills & Details</button>
                                 <button onClick={() => { navigate('/certificates'); setMobileMenuOpen(false); }} className="text-left text-black hover:text-gray-600 transition-colors py-2">Certifications</button>
@@ -379,6 +400,49 @@ const Portfolio = () => {
                                     <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-black hover:underline group-hover:gap-3 transition-all">
                                         <Github className="w-4 h-4" />
                                         View on GitHub
+                                    </a>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* IoT Projects Section */}
+            <section id="iot-projects" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative bg-white">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-12 fade-in-section animate-fade-in-up">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700 uppercase tracking-wider mb-3">
+                            <Sparkles className="w-3.5 h-3.5" /> IoT & Embedded Systems
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-4">IoT Projects</h2>
+                        <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                            Hardware-software integrated prototypes built with microcontrollers, sensors, and real-time control logic
+                        </p>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+                        {iotProjects.map((project, idx) => (
+                            <Card key={idx} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group fade-in-section bg-white animate-fade-in-up flex flex-col justify-between" style={{ animationDelay: `${0.2 + idx * 0.15}s` }}>
+                                <CardHeader>
+                                    <div className="flex items-start justify-between mb-2">
+                                        <Badge variant="outline" className="mb-3 group-hover:bg-black group-hover:text-white transition-colors">{project.category}</Badge>
+                                    </div>
+                                    <CardTitle className="text-lg sm:text-xl mb-2 group-hover:text-gray-600 transition-colors">{project.title}</CardTitle>
+                                    <CardDescription className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                                        {project.description}
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="flex flex-wrap gap-2 mb-4">
+                                        {project.technologies.map((tech, techIdx) => (
+                                            <Badge key={techIdx} variant="secondary" className="text-xs bg-gray-100">
+                                                {tech}
+                                            </Badge>
+                                        ))}
+                                    </div>
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-black hover:underline group-hover:gap-3 transition-all">
+                                        <ArrowRight className="w-4 h-4" />
+                                        {project.linkLabel}
                                     </a>
                                 </CardContent>
                             </Card>
