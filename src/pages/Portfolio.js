@@ -148,25 +148,32 @@ const Portfolio = () => {
 
     const projects = [
         {
-            title: 'Credit Card Fraud Detection',
-            description: 'Built an intelligent web application using AI models to detect fraudulent credit card transactions in real-time. Features include automated alert systems and comprehensive fraud analytics dashboard.',
-            technologies: ['Python', 'Machine Learning', 'MongoDB', 'HTML/CSS/JS'],
+            title: 'InfraOps AI — Alert Triage App',
+            description: 'Built a native SwiftUI operational assistant that ingests infrastructure alerts and presents AI-generated root-cause recommendations with explicit human-in-the-loop approval and escalation controls before execution.',
+            technologies: ['Swift', 'SwiftUI', 'Xcode', 'JSON', 'AI Operations'],
             github: 'https://github.com/Sathya24200',
-            category: 'AI/ML'
+            category: 'Swift / AI Operations'
         },
         {
-            title: 'Smart Lane Assistant',
-            description: 'Developed a CNN-based lane detection system optimized for Indian road conditions using OpenCV. The system provides real-time lane guidance for autonomous vehicle applications.',
-            technologies: ['Python', 'OpenCV', 'Deep Learning', 'CNN'],
+            title: 'Anna University Regional Campus Official Portal',
+            description: 'Designed responsive UI/UX wireframes in Figma and built modular front-end web components; structured institutional departmental datasets using Python and Pandas for dynamic, standardized content delivery.',
+            technologies: ['React.js', 'Tailwind CSS', 'JavaScript', 'Python', 'Pandas'],
             github: 'https://github.com/Sathya24200',
-            category: 'Computer Vision'
+            category: 'Full-Stack Web & Data'
         },
         {
-            title: 'IoT-Based Gas Leak Detection',
-            description: 'Created an Arduino-based real-time gas leakage detection system with SMS alert capabilities and automated fan control for safety management.',
-            technologies: ['Arduino', 'IoT', 'C++', 'Sensors'],
+            title: 'Credit Card Fraud Detection Web System',
+            description: 'Engineered an end-to-end ML classification service and REST-integrated MongoDB dashboard to detect anomalous transactions in real time and trigger instant operator alerts.',
+            technologies: ['Python', 'Scikit-learn', 'JavaScript', 'MongoDB', 'REST APIs'],
             github: 'https://github.com/Sathya24200',
-            category: 'IoT'
+            category: 'Full-Stack AI Application'
+        },
+        {
+            title: 'Smart Lane Assistant & IoT Safety Automation',
+            description: 'Built a real-time CNN and OpenCV vision pipeline for lane detection alongside automated microcontroller alert systems (GSM SMS & EMG prosthetic actuation) with deterministic safety triggers.',
+            technologies: ['Python', 'OpenCV', 'TensorFlow', 'CNN', 'Embedded C'],
+            github: 'https://github.com/Sathya24200',
+            category: 'Computer Vision & IoT'
         }
     ];
 
@@ -314,9 +321,9 @@ const Portfolio = () => {
             <section id="projects" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative bg-gray-100">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-8 sm:mb-12 text-center fade-in-section animate-fade-in-up">Featured Projects</h2>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
                         {projects.map((project, idx) => (
-                            <Card key={idx} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group fade-in-section bg-white animate-fade-in-up" style={{ animationDelay: `${0.2 + idx * 0.15}s` }}>
+                            <Card key={idx} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group fade-in-section bg-white animate-fade-in-up flex flex-col justify-between" style={{ animationDelay: `${0.2 + idx * 0.15}s` }}>
                                 <CardHeader>
                                     <div className="flex items-start justify-between mb-2">
                                         <Badge variant="outline" className="mb-3 group-hover:bg-black group-hover:text-white transition-colors">{project.category}</Badge>

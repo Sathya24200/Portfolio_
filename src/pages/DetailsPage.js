@@ -95,34 +95,46 @@ const DetailsPage = () => {
     }, []);
 
     const skills = {
-        dataAI: ['Python', 'SQL', 'Pandas', 'NumPy', 'Machine Learning', 'Deep Learning', 'Data Visualization', 'OpenCV'],
-        tools: ['Git', 'GitHub', 'VS Code', 'Linux', 'Google Colab', 'MongoDB'],
-        design: ['CATIA', 'Siemens NX', 'AutoCAD', 'Blender']
+        dataAI: ['Python', 'Swift', 'Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', 'OpenCV', 'Human-in-the-Loop AI', 'Predictive Modeling'],
+        webPlatforms: ['SwiftUI', 'Xcode', 'React.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'REST APIs', 'Data Pipelines', 'Workflow Automation'],
+        toolsDatabases: ['MongoDB', 'MySQL', 'SQLite', 'Git', 'GitHub', 'Linux', 'VS Code', 'Figma', 'CATIA', 'Siemens NX', 'AutoCAD']
     };
 
     const experience = [
         {
             title: 'Data Science Intern',
             company: 'Sangam Soft Solutions',
-            duration: '2025 (3 weeks)',
-            description: 'Worked on real-time data science tasks, gained hands-on experience in data preprocessing, visualization, and ML model development. Assisted in building data-driven solutions for business use cases.',
-            skills: ['Python', 'Data Analysis', 'ML Models'],
+            duration: '2025',
+            description: 'Engineered automated Python and Pandas data preprocessing, validation, and feature-engineering pipelines across business datasets to surface reliable, shared operational metrics.',
+            skills: ['Python', 'Pandas', 'Predictive Modeling', 'Data Pipelines', 'Feature Engineering'],
             achievements: [
-                'Developed data preprocessing pipelines',
-                'Built ML models for business solutions',
-                'Enhanced skills in data visualization'
+                'Engineered automated Python and Pandas data preprocessing and validation pipelines',
+                'Surfaced reliable, shared operational metrics across business datasets',
+                'Developed baseline predictive ML models and automated visual evaluation reports to support data-driven decisions'
             ]
         },
         {
             title: 'Trainee Design Engineer',
-            company: 'Hirotec (MNC)',
-            duration: '2023 - 2024 (1 Year)',
-            description: 'Worked as a Design Engineer, designed and developed mechanical components as per company standards. Coordinated with cross-functional teams to meet project requirements.',
-            skills: ['CAD Design', 'Team Coordination', 'Engineering'],
+            company: 'Hirotec India (MNC)',
+            duration: '2023 – 2024 (1 Year)',
+            description: 'Designed industrial components and assemblies adhering to strict OEM engineering standards and quality validation workflows.',
+            skills: ['CATIA', 'Siemens NX', 'OEM Standards', 'Quality Validation', 'Cross-functional Collaboration'],
             achievements: [
-                'Designed mechanical components',
-                'Collaborated with cross-functional teams',
-                'Learned industrial design processes'
+                'Designed industrial components and assemblies adhering to strict OEM engineering standards',
+                'Maintained rigorous quality validation workflows and standardized technical documentation',
+                'Collaborated across cross-functional engineering teams to streamline deliverables and production workflows'
+            ]
+        },
+        {
+            title: 'IoT & Design Thinking Trainee',
+            company: 'Regional Science Centre',
+            duration: '14 Weeks Training',
+            description: 'Built rapid hardware-software prototypes integrating microcontrollers, sensor data acquisition, and iterative systems design.',
+            skills: ['Microcontrollers', 'Embedded C', 'Sensor Data Acquisition', 'Hardware Prototyping', 'Systems Design'],
+            achievements: [
+                'Built rapid hardware-software prototypes integrating microcontrollers and sensors',
+                'Implemented sensor data acquisition and iterative systems design methodology',
+                'Applied design thinking principles to solve real-world automation challenges'
             ]
         }
     ];
@@ -214,13 +226,13 @@ const DetailsPage = () => {
                                     <div className="p-2 sm:p-3 bg-gray-100 rounded-lg group-hover:bg-black group-hover:text-white transition-all">
                                         <Database className="w-5 h-5 sm:w-6 sm:h-6" />
                                     </div>
-                                    <CardTitle className="text-lg sm:text-xl">Tools & Technologies</CardTitle>
+                                    <CardTitle className="text-lg sm:text-xl">Platforms & Web</CardTitle>
                                 </div>
-                                <CardDescription className="text-sm sm:text-base">Development tools and platforms</CardDescription>
+                                <CardDescription className="text-sm sm:text-base">Platforms, frameworks, and web technologies</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <div className="flex flex-wrap gap-2">
-                                    {skills.tools.map((skill, idx) => (
+                                    {skills.webPlatforms.map((skill, idx) => (
                                         <Badge key={idx} variant="secondary" className="text-xs sm:text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 transition-all hover:scale-105">
                                             {skill}
                                         </Badge>
@@ -235,13 +247,13 @@ const DetailsPage = () => {
                                     <div className="p-2 sm:p-3 bg-gray-100 rounded-lg group-hover:bg-black group-hover:text-white transition-all">
                                         <Wrench className="w-5 h-5 sm:w-6 sm:h-6" />
                                     </div>
-                                    <CardTitle className="text-lg sm:text-xl">Design Tools</CardTitle>
+                                    <CardTitle className="text-lg sm:text-xl">Databases & Tools</CardTitle>
                                 </div>
-                                <CardDescription className="text-sm sm:text-base">CAD and 3D design software</CardDescription>
+                                <CardDescription className="text-sm sm:text-base">Databases, developer tools, and engineering software</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <div className="flex flex-wrap gap-2">
-                                    {skills.design.map((skill, idx) => (
+                                    {skills.toolsDatabases.map((skill, idx) => (
                                         <Badge key={idx} variant="secondary" className="text-xs sm:text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 transition-all hover:scale-105">
                                             {skill}
                                         </Badge>
