@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Github, Linkedin, Mail, Download, ArrowRight, Sparkles, Award, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, ArrowRight, Sparkles, Award, Menu, X, Trophy, Briefcase } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -177,6 +177,33 @@ const Portfolio = () => {
         }
     ];
 
+    const experiences = [
+        {
+            title: 'Data Science Intern',
+            company: 'Sangam Soft Solutions',
+            period: '2025',
+            category: 'Data Science & ML',
+            description: 'Engineered automated Python and Pandas data preprocessing, validation, and feature-engineering pipelines across business datasets to surface reliable, shared operational metrics.',
+            skills: ['Python', 'Pandas', 'Predictive Modeling', 'ML Pipelines']
+        },
+        {
+            title: 'Trainee Design Engineer',
+            company: 'Hirotec India (MNC)',
+            period: '2023 – 2024 (1 Year)',
+            category: 'Industrial Design',
+            description: 'Designed industrial components and assemblies adhering to strict OEM engineering standards and quality validation workflows. Collaborated across cross-functional engineering teams.',
+            skills: ['CATIA', 'Siemens NX', 'OEM Standards', 'Quality Validation']
+        },
+        {
+            title: 'IoT & Design Thinking Trainee',
+            company: 'Regional Science Centre',
+            period: '14 Weeks Training',
+            category: 'IoT & Embedded Systems',
+            description: 'Built rapid hardware-software prototypes integrating microcontrollers, sensor data acquisition, and iterative systems design. Applied design thinking principles for real-world automated alert systems.',
+            skills: ['Microcontrollers', 'Embedded C', 'Sensor Data Acquisition', 'Hardware Prototyping']
+        }
+    ];
+
     return (
         <div className="min-h-screen bg-white overflow-hidden">
             {/* Animated Background Elements */}
@@ -197,11 +224,13 @@ const Portfolio = () => {
                         </div>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center gap-8">
+                        <div className="hidden md:flex items-center gap-7">
                             <button onClick={() => scrollToSection('about')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">About</button>
                             <button onClick={() => scrollToSection('projects')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Projects</button>
-                            <button onClick={() => navigate('/details')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Skills & Experience</button>
+                            <button onClick={() => scrollToSection('experience')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Experience & IoT</button>
+                            <button onClick={() => navigate('/details')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Skills & Details</button>
                             <button onClick={() => navigate('/certificates')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Certifications</button>
+                            <button onClick={() => navigate('/achievements')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Achievements</button>
                             <button onClick={() => scrollToSection('contact')} className="text-sm font-medium text-black hover:text-gray-600 transition-all hover:-translate-y-0.5">Contact</button>
                         </div>
 
@@ -220,8 +249,10 @@ const Portfolio = () => {
                             <div className="flex flex-col py-4 px-6 space-y-4">
                                 <button onClick={() => scrollToSection('about')} className="text-left text-black hover:text-gray-600 transition-colors py-2">About</button>
                                 <button onClick={() => scrollToSection('projects')} className="text-left text-black hover:text-gray-600 transition-colors py-2">Projects</button>
-                                <button onClick={() => { navigate('/details'); setMobileMenuOpen(false); }} className="text-left text-black hover:text-gray-600 transition-colors py-2">Skills & Experience</button>
+                                <button onClick={() => scrollToSection('experience')} className="text-left text-black hover:text-gray-600 transition-colors py-2">Experience & IoT</button>
+                                <button onClick={() => { navigate('/details'); setMobileMenuOpen(false); }} className="text-left text-black hover:text-gray-600 transition-colors py-2">Skills & Details</button>
                                 <button onClick={() => { navigate('/certificates'); setMobileMenuOpen(false); }} className="text-left text-black hover:text-gray-600 transition-colors py-2">Certifications</button>
+                                <button onClick={() => { navigate('/achievements'); setMobileMenuOpen(false); }} className="text-left text-black hover:text-gray-600 transition-colors py-2">Achievements</button>
                                 <button onClick={() => scrollToSection('contact')} className="text-left text-black hover:text-gray-600 transition-colors py-2">Contact</button>
                             </div>
                         </div>
@@ -312,6 +343,10 @@ const Portfolio = () => {
                                 <Award className="w-5 h-5 mr-2" />
                                 View Certifications
                             </Button>
+                            <Button onClick={() => navigate('/achievements')} variant="outline" size="lg" className="border-black text-black hover:bg-gray-50 transition-all hover:scale-105 group w-full sm:w-auto">
+                                <Trophy className="w-5 h-5 mr-2" />
+                                View Achievements
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -348,6 +383,61 @@ const Portfolio = () => {
                                 </CardContent>
                             </Card>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Experience & IoT Training Section */}
+            <section id="experience" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white relative">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-12 fade-in-section animate-fade-in-up">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700 uppercase tracking-wider mb-3">
+                            <Briefcase className="w-3.5 h-3.5" /> Career Journey & Training
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-black mb-4">Experience & IoT Training</h2>
+                        <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                            Hands-on experience spanning Data Science pipelines, OEM precision engineering, and IoT embedded automation
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+                        {experiences.map((exp, idx) => (
+                            <Card key={idx} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group fade-in-section bg-white animate-fade-in-up flex flex-col justify-between" style={{ animationDelay: `${0.2 + idx * 0.15}s` }}>
+                                <CardHeader>
+                                    <div className="flex items-center justify-between mb-2">
+                                        <Badge variant="outline" className="group-hover:bg-black group-hover:text-white transition-colors">
+                                            {exp.category}
+                                        </Badge>
+                                        <span className="text-xs text-gray-500 font-medium">{exp.period}</span>
+                                    </div>
+                                    <CardTitle className="text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-gray-600 transition-colors">
+                                        {exp.title}
+                                    </CardTitle>
+                                    <CardDescription className="text-sm font-semibold text-gray-800">
+                                        {exp.company}
+                                    </CardDescription>
+                                    <p className="text-sm text-gray-600 leading-relaxed mt-3">
+                                        {exp.description}
+                                    </p>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100">
+                                        {exp.skills.map((skill, sIdx) => (
+                                            <Badge key={sIdx} variant="secondary" className="text-xs bg-gray-100">
+                                                {skill}
+                                            </Badge>
+                                        ))}
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+
+                    <div className="text-center mt-10 fade-in-section animate-fade-in-up">
+                        <Button onClick={() => navigate('/details')} variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white transition-all hover:scale-105">
+                            View Full Skills & Experience Breakdown
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
                     </div>
                 </div>
             </section>

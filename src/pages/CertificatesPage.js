@@ -163,7 +163,15 @@ const CertificatesPage = () => {
                             <span className="hidden sm:inline">Back to Home</span>
                             <span className="sm:hidden">Back</span>
                         </Button>
-                        <div className="text-xl font-semibold text-black">SR</div>
+                        <div className="flex items-center gap-3 sm:gap-4">
+                            <Button onClick={() => navigate('/details')} variant="ghost" className="text-xs sm:text-sm text-gray-700 hover:text-black hover:bg-gray-100">
+                                Skills & Experience
+                            </Button>
+                            <Button onClick={() => navigate('/achievements')} variant="ghost" className="text-xs sm:text-sm text-gray-700 hover:text-black hover:bg-gray-100">
+                                Achievements
+                            </Button>
+                            <div className="text-lg sm:text-xl font-semibold text-black">SR</div>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -252,7 +260,10 @@ const CertificatesPage = () => {
                         <Button onClick={() => navigate('/details')} size="lg" className="bg-black hover:bg-gray-800 text-white transition-all hover:scale-105 w-full sm:w-auto">
                             View Skills & Experience
                         </Button>
-                        <Button onClick={() => navigate('/')} variant="outline" size="lg" className="border-black text-black hover:bg-gray-50 transition-all hover:scale-105 w-full sm:w-auto">
+                        <Button onClick={() => navigate('/achievements')} variant="outline" size="lg" className="border-black text-black hover:bg-gray-50 transition-all hover:scale-105 w-full sm:w-auto">
+                            View Achievements
+                        </Button>
+                        <Button onClick={() => navigate('/')} variant="ghost" size="lg" className="text-black hover:bg-gray-100 transition-all hover:scale-105 w-full sm:w-auto">
                             Back to Home
                         </Button>
                     </div>
